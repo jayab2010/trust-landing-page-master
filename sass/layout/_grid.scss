@@ -1,0 +1,28 @@
+.row{
+    @include text-box;
+    padding-top: 0;
+
+    @include breakpoint-up(large){
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 12rem;
+        padding-bottom: 10rem;
+    }
+}
+
+
+
+
+
+.footer__links{
+margin-top: 3rem;
+
+@include breakpoint-up(large){
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+
+}

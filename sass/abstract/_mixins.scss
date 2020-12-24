@@ -1,0 +1,44 @@
+@mixin header-text {
+    letter-spacing: 1.5px;
+    color: $color-heading;
+    font-family: $font-heading;
+    font-weight: 700;
+    display: block;
+    padding-bottom: 1.5rem;
+  }
+  
+  @mixin body-text {
+    color: $color-heading;
+    font-family: $font-body;
+    font-size: 1.2rem;
+    padding: 0rem 0.5rem;
+    font-weight: 400;
+  }
+  
+  @mixin text-box {
+    padding: 8rem 2.5rem;
+    text-align: center;
+  }
+  
+  //breakpoints
+  $breakpoints-up: (
+    "medium": "425px",
+    "large": "1440px",
+  );
+  
+  $breakpoints-down: (
+    "small": "424px",
+    "medium": "1439px",
+  );
+  
+  @mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+      @content;
+    }
+  }
+  
+  @mixin breakpoint-down($size) {
+    @media (min-width: map-get($breakpoints-down, $size)) {
+      @content;
+    }
+  }

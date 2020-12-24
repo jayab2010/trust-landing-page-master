@@ -1,0 +1,71 @@
+.header {
+    z-index: 0;
+    position: relative;
+    background-color: $color-primary-dark;
+    
+  
+    &::before {
+      content: url("../images/bg-pattern-intro-left-mobile.svg");
+      position: absolute;
+      top: 50%;
+      z-index: -1;
+      
+  
+      @include breakpoint-up(large) {
+        content: url("../images/bg-pattern-intro-left-desktop.svg");
+        position: absolute;
+        top: 65%;
+      }
+    }
+    &::after {
+      content: url("../images/bg-pattern-intro-right-mobile.svg");
+      position: absolute;
+      top: 83%;
+      right: 0;
+      z-index: -1;
+  
+      @include breakpoint-up(large) {
+        content: url("../images/bg-pattern-intro-right-desktop.svg");
+        position: absolute;
+        top: 0;
+      }
+    }
+  
+    &__img {
+      width: 100%;
+      height: auto;
+  
+      @include breakpoint-up(large) {
+        display: none;
+      }
+    }
+  
+    &__text-box {
+      @include text-box;
+      position: relative;
+  
+      @include breakpoint-up(large) {
+        padding: 12.5rem;
+        text-align: left;
+        width: 50%;
+  
+        &::before {
+          content: "";
+          display: block;
+          width: 20%;
+          margin-bottom: 6rem;
+          border-bottom: 1px solid $color-heading;
+         
+        }
+  
+        &::after {
+          content: url("../images/image-desktop2.jpg");
+          position: absolute;
+          top: 20%;
+          left: 100%;
+          z-index: -10;
+         
+        }
+      }
+    }
+  }
